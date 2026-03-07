@@ -2,29 +2,10 @@
 [PuzzleStart "10"]
 [Orientation "white"]
 
-1. e4 e5 
-2. Nf3 Nc6 
-3. Bc4 Bc5 
-4. b4 Bxb4 
-5. c3 Ba5 
-6. d4 exd4 
-7. O-O dxc3 
-8. Qd5 Qf6 
-9. Bg5 Qg6 
-10. Ne5 Nxe5 
-11. Qxe5+ Kf8 
-12. Qxa5 c2 
-13. Qd8# 
-
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O dxc3 8. Qd5 Qf6 9. Bg5 Qg6 10. Ne5 Nxe5 11. Qxe5+ Kf8 12. Qxa5 c2 13. Qd8# 
 
 [Event "Puzzle 4: Promotion Mate"]
 [PuzzleStart "1"]
 [Orientation "white"]
 
-1. a4 h5
-2. a5 h4
-3. a6 h3
-4. axb7 hxg2
-5. bxa8=Q gxh1=Q
-6. Qxh1 Rxh1
-7. Kf1
+1. a4 h5 2. a5 h4 3. a6 h3 4. axb7 hxg2 5. bxa8=Q gxh1=Q 6. Qxh1 Rxh1 7. Kf1 
