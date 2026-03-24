@@ -1,0 +1,73 @@
+/* Base Layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #6a6a6a;
+    color: white;
+}
+
+/* Trainer Section */
+#trainer {
+    text-align: center;
+    margin-top: 90px;
+    padding: 10px;
+}
+
+#question {
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+/* Button */
+#next-btn {
+    padding: 10px 18px;
+    border: none;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#next-btn:hover {
+    background: #444;
+}
+
+/* Chessboard Container */
+#board {
+    width: 400px;
+    margin: 25px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Feedback Colors */
+.correct {
+    background-color: #28a745 !important; /* green */
+}
+
+.wrong {
+    background-color: #dc3545 !important; /* red */
+}
+
+/* Smooth highlight effect */
+.square-55d63 {
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive (mobile support) */
+@media (max-width: 500px) {
+    #board {
+        width: 90%;
+    }
+
+    #question {
+        font-size: 18px;
+    }
+
+    #next-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}

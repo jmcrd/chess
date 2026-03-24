@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighten Up Chess</title>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="splash.css">
+    <link rel="stylesheet" href="chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash">
+        <div class="logo-wrapper">
+            <div class="logo-circle">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo">
+                </a>
+            </div>
+        </div>
+        <div id="progress-container" class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Start Button -->
+        <div id="start-btn-container">
+            <button id="start-btn">Start</button>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-left">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo">
+            </a>
+        </div>
+        <div class="top-center">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" style="text-decoration:none; color:inherit;">
+                <h3>Lighten Up Chess</h3>
+            </a>
+        </div>
+        <div class="top-right">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" id="subscribe-btn">Subscribe</a>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <main id="game-container" style="display:none;">
+        <div id="instruction-box">
+            <p id="instruction-text">A chessboard has 64 squares. Let's find them!</p>
+            <h2 id="target-prompt">Select any <span class="light-text">Light</span> square.</h2>
+        </div>
+
+        <div id="myBoard"></div>
+    </main>
+
+    <!-- Stop Button -->
+    <button id="stop-btn">How this Works</button>
+
+    <!-- Overlay -->
+<div id="overlay">
+    <div id="overlay-content">
+        <h2>Like the View link below to see how this works</h2>
+
+        <!-- YouTube Logo -->
+        <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+            <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo" style="width:80px; height:80px; border-radius:50%; margin-bottom:15px;">
+        </a>
+
+        <!-- YouTube Subscribe Button -->
+        <div style="margin-bottom:15px;">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" 
+               style="display:inline-block; padding:10px 20px; background:#ff0000; color:white; border-radius:6px; text-decoration:none; font-weight:bold;">
+                Subscribe
+            </a>
+        </div>
+
+        <!-- Optional Video Embed -->
+        <div style="margin-bottom:15px;">
+            <iframe width="300" height="170" 
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=0&rel=0" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Back Button -->
+        <button id="back-btn" style="padding:10px 20px; border:none; border-radius:6px; background:#00ffcc; color:#000; cursor:pointer;">
+            Back
+        </button>
+    </div>
+</div>
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="chess.min.js"></script>
+    <script src="chessboard-1.0.0.min.js"></script>
+    <script src="splashLoader.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

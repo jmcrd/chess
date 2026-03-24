@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coordinate Master | Lighten Up Chess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="splash.css">
+    <link rel="stylesheet" href="topbar.css">
+</head>
+<body>
+
+    <div id="splash">
+        <div class="logo-wrapper">
+            <div class="logo-circle">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo">
+                </a>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <div id="game-interface" style="opacity: 0; transition: opacity 0.8s ease;">
+        
+        <div class="top-bar">
+            <div class="top-left">
+                <img src="Lightenup2_1.png" alt="Logo">
+            </div>
+            <div class="top-center">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" style="text-decoration:none; color:inherit;">
+                    <h3>Lighten Up Chess</h3>
+                </a>
+            </div>
+            <div class="top-right">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" id="subscribe-btn">Subscribe</a>
+            </div>
+        </div>
+
+        <header>
+            <h1>Coordinate Master</h1>
+            <div id="target-display">READY?</div>
+        </header>
+
+        <div class="game-container">
+            <div class="settings-container">
+                <div class="toggle-group">
+                    <label class="toggle-item">
+                        <input type="radio" name="mode" value="file">
+                        <span>Files Only</span>
+                    </label>
+                    <label class="toggle-item">
+                        <input type="radio" name="mode" value="rank">
+                        <span>Ranks Only</span>
+                    </label>
+                    <label class="toggle-item">
+                        <input type="radio" name="mode" value="both" checked>
+                        <span>Full Coord</span>
+                    </label>
+                </div>
+
+                <div class="toggle-group" style="margin-top: 10px;">
+                    <label class="toggle-item">
+                        <input type="radio" name="side" value="white" checked onchange="initBoard()">
+                        <span>White Side</span>
+                    </label>
+                    <label class="toggle-item">
+                        <input type="radio" name="side" value="black" onchange="initBoard()">
+                        <span>Black Side</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="board-wrapper">
+                <div id="board"></div>
+            </div>
+
+            <div class="controls-area">
+                <div id="results">Score: 0 | Time: 0s</div>
+                <div class="buttons">
+                    <button id="start-btn" class="submit-btn" onclick="startGame()">Start Training</button>
+                    <button id="stop-btn" class="reset-btn" onclick="stopGame()" style="display:none;">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+        <div class="score-card">
+            <h2>Training Over!</h2>
+            <div id="stats-summary"></div>
+
+            <div class="focus-box" id="focus-area">
+                <h3>Needs Focus:</h3>
+                <div id="focus-list"></div>
+            </div>
+
+            <div class="mistake-container">
+                <h3>History:</h3>
+                <ul id="mistake-list"></ul>
+            </div>
+            <button class="submit-btn" onclick="closeOverlay()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="splashLoader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
