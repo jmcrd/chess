@@ -40,7 +40,7 @@
         </div>
 
         <header>
-            <h1>Coordinate Master</h1>
+            <!-- <h1>Coordinate Master</h1> -->
             <div id="target-display">READY?</div>
         </header>
 
@@ -101,7 +101,21 @@
                 <h3>History:</h3>
                 <ul id="mistake-list"></ul>
             </div>
-            <button class="submit-btn" onclick="closeOverlay()">Try Again</button>
+
+            <!-- New Video + Subscribe Section -->
+            <div class="overlay-video-section">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo" class="overlay-logo">
+                </a>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" 
+                    title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <button class="submit-btn" style="margin-top: 10px;">Subscribe</button>
+                </a>
+            </div>
+
+            <button class="submit-btn" onclick="closeOverlay()" style="margin-top: 15px;">Back</button>
         </div>
     </div>
 

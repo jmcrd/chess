@@ -286,3 +286,25 @@ button:active {
 /* Custom Scrollbar */
 .mistake-container::-webkit-scrollbar { width: 4px; }
 .mistake-container::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+
+/* --- Overlay Video Section --- */
+.overlay-video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.overlay-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+.overlay-video-section iframe {
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
