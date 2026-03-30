@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighten Up Chess</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="splash.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash">
+        <div class="logo-wrapper">
+            <div class="logo-circle">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo">
+                </a>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-left">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                <img src="Lightenup2_1.png" alt="Lighten Up Chess Logo">
+            </a>
+        </div>
+        <div class="top-center">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" style="text-decoration:none; color:inherit;">
+                <h3>Lighten Up Chess</h3>
+            </a>
+        </div>
+        <div class="top-right">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank" id="subscribe-btn">
+                Subscribe
+            </a>
+        </div>
+    </div>
+
+    <!-- ✅ MAIN CONTENT (IMPORTANT FIX) -->
+    <div class="main-content">
+        <div class="quiz-container" id="quizBox"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="splashLoader.js"></script>
+    <script src="main.js"></script>
+    <script src="questions.js"></script>
+    <script src="ui.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>

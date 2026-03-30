@@ -1,0 +1,165 @@
+/* 🔷 Top Bar Container */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 15px;
+    margin: 0 auto 15px auto;
+
+    background: rgba(2, 119, 137, 0.663);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    animation: topBarEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 3.6s;
+}
+
+/* 🎬 Top bar entry */
+@keyframes topBarEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 🔹 Initial hidden state (children) */
+.top-left,
+.top-center,
+.top-right {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* 🔹 Sequential animation (after container) */
+.top-left {
+    animation: fadeSlideUp 0.5s ease forwards;
+    animation-delay: 4s;
+}
+
+.top-center {
+    animation: fadeSlideUp 0.5s ease forwards;
+    animation-delay: 4.2s;
+}
+
+.top-right {
+    animation: fadeSlideUp 0.5s ease forwards;
+    animation-delay: 4.4s;
+}
+
+/* 🎬 Child animation */
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Left (Image) */
+.top-left img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Center (Text) */
+.top-center {
+    flex: 1;
+    text-align: center;
+}
+
+.top-center h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f1efef;
+}
+
+/* ============================= */
+/* 🔥 Subscribe Button (Advanced Animation) */
+/* ============================= */
+
+#subscribe-btn {
+    display: inline-block;
+    padding: 6px 14px;
+
+    font-size: 14px;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    background: #3b82f6;
+    color: white;
+
+    border: 2px solid transparent;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.3s ease;
+
+    /* 👇 starts AFTER button appears */
+    animation: pulseColor 3s infinite;
+    animation-delay: 4.8s;
+    animation-fill-mode: both;
+}
+
+/* Hover */
+#subscribe-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 18px rgba(239, 68, 68, 0.5);
+}
+
+/* Click feel */
+#subscribe-btn:active {
+    transform: scale(0.95);
+}
+
+/* 🎬 Pulse + Color Animation */
+@keyframes pulseColor {
+    0% {
+        transform: scale(1);
+        background: #3b82f6;
+        border-color: #3b82f6;
+    }
+
+    50% {
+        transform: scale(1.08);
+        background: #ef4444;
+        border-color: #ef4444;
+    }
+
+    100% {
+        transform: scale(1);
+        background: #3b82f6;
+        border-color: #3b82f6;
+    }
+}
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVENESS */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        padding: 8px 10px;
+    }
+
+    .top-left img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .top-center h3 {
+        font-size: 14px;
+    }
+
+    #subscribe-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

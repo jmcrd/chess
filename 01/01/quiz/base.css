@@ -1,0 +1,22 @@
+/* Base Layout */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Main wrapper */
+.main-content {
+    width: 100%;
+    max-width: 900px;   /* 👈 keeps content centered on large screens */
+    margin: 0 auto;
+    padding: 10px;
+}
