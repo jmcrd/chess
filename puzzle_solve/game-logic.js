@@ -1,73 +1,80 @@
+// main.js
+
 var game = new Chess();
 var currentMoveIndex = 0;
 
-/**
- * Resets the move counter for a new puzzle
- */
-function resetMoveIndex() { 
-    currentMoveIndex = 0; 
-}
+// Global puzzle storage (same name as before → no breaking changes)
+var chessPuzzles = [];
 
 /**
- * Executes the opponent's move based on the puzzle data
- * Now includes drawing the move arrow for the first move and responses.
+ * Load puzzles from GitHub JSON
  */
-function makeOpponentMove(puzzle, board) {
-    if (currentMoveIndex >= puzzle.moves.length) return;
+async function loadPuzzlesFromGitHub() {
+    const url = "https://raw.githubusercontent.com/jmcrd/chess/refs/heads/main/puzzle_solve/puzzle.json"; // 🔥 IMPORTANT
 
-    const moveUci = puzzle.moves[currentMoveIndex];
-    const from = moveUci.substring(0, 2);
-    const to = moveUci.substring(2, 4);
-    const promo = moveUci.length === 5 ? moveUci[4] : 'q';
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
 
-    // 1. Draw the arrow first so the user sees the opponent's intent
-    drawMoveArrow(from, to);
+        const params = new URLSearchParams(window.location.search);
 
-    // 2. Update the internal chess engine
-    game.move({ from: from, to: to, promotion: promo });
-    currentMoveIndex++;
-    
-    // 3. Update the visual board and highlight the move
-    board.position(game.fen());
-    highlightMove(from, to);
-}
+        const category = params.get("category") || "mate1";
+        const set = parseInt(params.get("set")) || 1;
 
-/**
- * Handles the player's move execution and checks if it's correct
- */
-function handleMoveExecution(source, target, puzzle, board, promo = 'q') {
-    let move = game.move({ from: source, to: target, promotion: promo });
-    
-    if (move === null) return 'snapback';
+        const allPuzzles = data[category];
 
-    // 1. Show player's move
-    highlightMove(source, target);
-    board.position(game.fen());
-    currentMoveIndex++;
+        if (!allPuzzles || allPuzzles.length === 0) {
+            console.error("No puzzles found for category:", category);
+            return [];
+        }
 
-    // 2. If more moves exist → opponent should move FIRST
-    if (currentMoveIndex < puzzle.moves.length) {
+        const start = (set - 1) * 25;
+        const end = start + 25;
 
-        // Delay so player can SEE their move
-        setTimeout(() => {
+        console.log(`Loading ${category} | Set ${set} (${start} → ${end})`);
 
-            // Opponent move
-            makeOpponentMove(puzzle, board);
+        return allPuzzles.slice(start, end);
 
-            // Delay again so opponent move is visible
-            setTimeout(() => {
-                showOverlay('correct');
-                updateStatusUI('✅ Correct!', '#4caf50');
-            }, 700); // <-- adjust feel here
-
-        }, 500); // <-- delay after player move
-
-    } else {
-        // Final move (puzzle solved)
-
-        setTimeout(() => {
-            showOverlay('solved');
-            updateStatusUI('🏆 Puzzle Solved!', '#ffd700');
-        }, 1000); // give time to SEE final move
+    } catch (err) {
+        console.error("Error loading puzzles:", err);
+        return [];
     }
 }
+
+/**
+ * Reset move index for each puzzle
+ */
+function resetMoveIndex() {
+    currentMoveIndex = 0;
+}
+
+/**
+ * Start the app AFTER puzzles are loaded
+ */
+async function startApp() {
+
+    // Start splash animation
+    if (typeof startLoading === "function") {
+        startLoading();
+    }
+
+    // Load puzzles
+    chessPuzzles = await loadPuzzlesFromGitHub();
+
+    if (!chessPuzzles || chessPuzzles.length === 0) {
+        alert("⚠️ No puzzles loaded. Check your GitHub link or category.");
+        return;
+    }
+
+    console.log("Loaded puzzles:", chessPuzzles.length);
+
+    // Start first puzzle
+    if (typeof loadPuzzle === "function") {
+        loadPuzzle(0);
+    } else {
+        console.error("loadPuzzle() not found!");
+    }
+}
+
+// Run app
+window.onload = startApp;
