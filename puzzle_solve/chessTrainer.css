@@ -1,0 +1,90 @@
+/* --- Container and Layout --- */
+#trainer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    color: white; 
+}
+
+#board {
+    width: 400px;
+    margin-bottom: 20px;
+    position: relative; /* Needed for arrows */
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    min-height: 45px;
+}
+
+
+/* --- Buttons --- */
+#controls button, #prev-btn, #next-btn {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#controls button:hover #prev-btn, #next-btn{
+    background-color: #ffaa00;
+}
+
+#controls button:active {
+    transform: scale(0.95);
+}
+
+#show-solution-btn {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
+
+#show-solution-btn:hover {
+    background-color: #45a049 !important;
+}
+
+/* --- Move Highlighting --- */
+.highlight-from {
+    background-color: rgba(255, 255, 0, 0.3) !important;
+    box-shadow: inset 0 0 3px 2px rgba(255, 204, 0, 0.5);
+}
+
+.highlight-to {
+    background-color: rgba(255, 255, 0, 0.5) !important;
+    box-shadow: inset 0 0 5px 3px rgba(255, 204, 0, 0.8);
+}
+
+/* --- Shake Animation --- */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* --- Arrow Layer --- */
+.chess-arrow-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}

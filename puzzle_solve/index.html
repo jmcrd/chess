@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighten Up Chess - Puzzle Trainer</title>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="splash.css">
+    <link rel="stylesheet" href="chessTrainer.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link rel="stylesheet" href="chessboard-1.0.0.min.css">
+</head>
+
+<body>
+
+    <div id="splash">
+        <div class="logo-wrapper">
+            <div class="logo-circle">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <img src="img/Lightenup2_1.png" alt="Lighten Up Chess Logo">
+                </a>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="top-bar">
+        <div class="top-left">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                <img src="img/Lightenup2_1.png" alt="Lighten Up Chess Logo">
+            </a>
+        </div>
+        <div class="top-center">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank"
+                style="text-decoration:none; color:inherit;">
+                <h3>Lighten Up Chess</h3>
+            </a>
+        </div>
+        <div class="top-right">
+            <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank"
+                id="subscribe-btn">Subscribe</a>
+        </div>
+    </div>
+
+    <div id="trainer-container">
+        <h1>Mate In One</h1>
+        <div id="turn-display" style="margin-bottom: 10px; font-weight: bold;"></div>
+        <!-- <div class="info">find the best move</div> -->
+        <div id="board"></div>
+
+        <div id="controls">
+            <div class="control-row">
+                <button id="show-solution-btn">Show Solution</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" style="display: none;">
+        <div id="overlay-content">
+            <div id="overlay-status">
+                <div id="overlay-icon"></div>
+                <h2 id="overlay-text"></h2>
+            </div>
+
+            <div id="solved-screen" style="display: none; margin-top: 20px;">
+                <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank">
+                    <img src="img/Lightenup2_1.png" alt="Lighten Up Chess Logo"
+                        style="width: 100px; margin-bottom: 15px; cursor: pointer;">
+                </a>
+
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; flex-direction:column;">
+                    <button id="prev-btn">Prev Puzzle</button>
+                    <button id="retry-btn">Try Again</button>
+                    <button id="next-btn">Next Puzzle</button>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <a href="https://www.youtube.com/@LightenupChess?sub_confirmation=1" target="_blank"
+                        id="overlay-subscribe-btn">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="chess.min.js"></script>
+    <script src="chessboard-1.0.0.min.js"></script>
+    <script src="chessPuzzlesData.js"></script>
+    <script src="ui-helpers.js"></script>
+    <script src="game-logic.js"></script>
+    <script src="chessTrainer.js"></script>
+    <script src="splashLoader.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
